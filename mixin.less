@@ -1,0 +1,24 @@
+// Clearing floats like a boss - h5bp.com/q
+// ==========================================================================
+.clearfix() {
+  &:before {
+    content: '';
+    display: block;
+}
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  zoom: 1;
+}
+
+.test(1000);
+
+.test(@n, @i: 1) when (@i =< @n) {
+  .foo-@{i} {
+    .clearfix();
+  }
+  .test(@n, (@i + 1));
+}
