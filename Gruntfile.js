@@ -4,13 +4,14 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
       less: {
-        all: {
-          expand: true,
-          cwd: 'less/',
-          src: ['*.less'],
-          dest: 'css/',
-          ext: '.css'
+        extend: {
+          src: 'less/extend.less',
+          dest: 'css/extend.css'
         },
+        mixin: {
+          src: 'less/mixin.less',
+          dest: 'css/mixin.css'
+        }
     }
   });
 
@@ -18,6 +19,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
 
   // Default task(s).
-  grunt.registerTask('default', ['less']);
+  grunt.registerTask('default', ['less:extend', 'less:mixin']);
 
 };
