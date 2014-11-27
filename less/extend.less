@@ -17,7 +17,7 @@
 .test(750);
 
 .test(@n, @i: 1) when (@i =< @n) {
-  .foo-@{i} {
+  .@{i} {
     &:extend(.clearfix);
   }
   .test(@n, (@i + 1));
