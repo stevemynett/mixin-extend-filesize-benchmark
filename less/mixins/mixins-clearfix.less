@@ -1,6 +1,6 @@
 // Clearing floats like a boss - h5bp.com/q
 // ==========================================================================
-.clearfix {
+.clearfix() {
   &:before {
     content: '';
     display: block;
@@ -14,11 +14,11 @@
   zoom: 1;
 }
 
-.test(2);
+.test(750);
 
 .test(@n, @i: 1) when (@i =< @n) {
   .@{i} {
-    &:extend(.clearfix);
+    .clearfix();
   }
   .test(@n, (@i + 1));
 }

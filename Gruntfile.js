@@ -27,12 +27,27 @@ module.exports = function(grunt) {
         ]
       }
     },
+    compress: {
+      main: {
+        options: {
+          mode: 'gzip'
+        },
+        files: [
+          // Each of the files in the src/ folder will be output to
+          // the dist/ folder each with the extension .gz.js
+          {
+            expand: true,
+            src: ['css/*.css'],
+            dest: '', ext: '.css.gz'}
+        ]
+      }
+    }
   });
 
-  // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-compress');
 
   // Default task(s).
-  grunt.registerTask('default', ['less:extend', 'less:mixins']);
+  grunt.registerTask('default', ['less:extend', 'less:mixins', 'compress']);
 
 };

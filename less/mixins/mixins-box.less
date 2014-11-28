@@ -1,0 +1,16 @@
+// Clearing floats like a boss - h5bp.com/q
+// ==========================================================================
+.box() {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+}
+
+.test(750);
+
+.test(@n, @i: 1) when (@i =< @n) {
+  .@{i} {
+    .box();
+  }
+  .test(@n, (@i + 1));
+}

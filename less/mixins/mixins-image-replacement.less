@@ -1,0 +1,16 @@
+// Clearing floats like a boss - h5bp.com/q
+// ==========================================================================
+.image-replacement {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.test(750);
+
+.test(@n, @i: 1) when (@i =< @n) {
+  .@{i} {
+    .image-replacement();
+  }
+  .test(@n, (@i + 1));
+}
