@@ -1,0 +1,24 @@
+.1 {
+  zoom: 1;
+}
+.1:before {
+  content: '';
+  display: block;
+}
+.1:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.2 {
+  zoom: 1;
+}
+.2:before {
+  content: '';
+  display: block;
+}
+.2:after {
+  content: '';
+  display: table;
+  clear: both;
+}
